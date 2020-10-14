@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
   end
   helper_method :cart_subtotal_cents
 
+  def create
+    # save post
+    flash[:notice] = "cart empty"
+  end
 
   def update_cart(new_cart)
     cookies[:cart] = {
